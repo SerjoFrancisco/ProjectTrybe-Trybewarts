@@ -2,15 +2,11 @@
     background-color: rgb(50, 167, 145);
     display: flex;
     justify-content: space-between;
-    
-
+    height: 64px;
 }
 .trybewarts-login {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
-    
 main {
    display: flex; 
 }
