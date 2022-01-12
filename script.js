@@ -13,7 +13,6 @@ const family = document.getElementsByName('family');
 const observations = document.getElementById('textarea');
 const form = document.getElementById('evaluation-form');
 
-const myForm = {};
 function signIn() {
   if (email.value === 'tryber@teste.com' && password.value === '123456') {
     alert('Olá, Tryber!');
@@ -54,7 +53,13 @@ function getCourses() {
   window.localStorage.setItem('Matérias', cursos);
 }
 function returnForm() {
-  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n` + `Email: ${localStorage.getItem('Email')}\n` + `Casa: ${localStorage.getItem('Casa')}\n` + `Família: ${localStorage.getItem('Família')}\n` + `Matérias: ${localStorage.getItem('Matérias')}\n` + `Avaliação: ${localStorage.getItem('Avaliação')}\n` + `Observações: ${localStorage.getItem('Observações')}`;
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n
+  Email: ${localStorage.getItem('Email')}\n
+  Casa: ${localStorage.getItem('Casa')}\n
+  Família: ${localStorage.getItem('Família')}\n
+  Matérias: ${localStorage.getItem('Matérias')}\n
+  Avaliação: ${localStorage.getItem('Avaliação')}\n
+  Observações: ${localStorage.getItem('Observações')}`;
 }
 function makeForm() {
   window.localStorage.setItem('Nome', `${firstname.value} ${lastname.value}`);
