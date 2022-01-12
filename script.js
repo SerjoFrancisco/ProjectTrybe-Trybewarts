@@ -32,7 +32,7 @@ function ableButton() {
 function getFamily() {
   for (let i = 0; i < family.length; i += 1) {
     if (family[i].checked === true) {
-      window.localStorage.setItem('Família', rating[i].value);
+      window.localStorage.setItem('Família', family[i].value);
     }
   }
 }
@@ -44,29 +44,30 @@ function getRate() {
   }
 }
 function getCourses() {
-  const array = [];
+  let itens = '';
   for (let i = 0; i < course.length; i += 1) {
     if (course[i].checked === true) {
-      array.push(course[i].value);
+      itens += `${course[i].value}, `;
     }
   }
-  window.localStorage.setItem('Matérias', JSON.stringify(array));
-}
-function makeForm() {
-  // window.localStorage.setItem('Nome', `${firstname.value} ${lastname.value}`);
-  // window.localStorage.setItem('Email', emailInput.value);
-  // window.localStorage.setItem('Casa', house.value);
-  // getFamily();
-  // getCourses();
-  // getRate();
-  // window.localStorage.setItem('Observações', observations.value);
-  // form.innerText = `Nome: ${localStorage.getItem('Nome')}`;
-  returnForm();
+  const cursos = itens.substring(0, itens.length - 2);
+  window.localStorage.setItem('Matérias', cursos);
 }
 function returnForm() {
-  let materias = localStorage.getItem('Matérias');
-  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n` + `Email:${localStorage.getItem('Email')}\n` + `Casa:${localStorage.getItem('Casa')}\n` + `Família:${localStorage.getItem('Família')}\n` + `Matérias:${materias}\n` + `Avaliação${localStorage.getItem('Avaliação')}\n` + `Observações:${localStorage.getItem('Observações')}`;
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n` + `Email: ${localStorage.getItem('Email')}\n` + `Casa: ${localStorage.getItem('Casa')}\n` + `Família: ${localStorage.getItem('Família')}\n` + `Matérias: ${localStorage.getItem('Matérias')}\n` + `Avaliação: ${localStorage.getItem('Avaliação')}\n` + `Observações: ${localStorage.getItem('Observações')}`;
 }
+function makeForm() {
+  window.localStorage.setItem('Nome', `${firstname.value} ${lastname.value}`);
+  window.localStorage.setItem('Email', emailInput.value);
+  window.localStorage.setItem('Casa', house.value);
+  getFamily();
+  getCourses();
+  getRate();
+  window.localStorage.setItem('Observações', observations.value);
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}`;
+  returnForm();
+}
+
 submitBtn.addEventListener('click', makeForm);
 logIn.addEventListener('click', signIn);
 checkbox.addEventListener('change', ableButton);
