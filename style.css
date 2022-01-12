@@ -35,7 +35,7 @@ main {
   border: 2px solid red;
 }
 
-#label-family {
+#family {
   display: flex;
   flex-direction: column;
   width: 50%;
