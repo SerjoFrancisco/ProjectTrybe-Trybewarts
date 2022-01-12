@@ -23,7 +23,7 @@ function signIn() {
 }
 
 function ableButton() {
-  if (checkbox.checked === true) {
+  if (checkbox.checked) {
     submitBtn.disabled = false;
   } else {
     submitBtn.disabled = true;
@@ -34,14 +34,14 @@ function countCharacters() {
 }
 function getFamily() {
   for (let i = 0; i < family.length; i += 1) {
-    if (family[i].checked === true) {
+    if (family[i].checked) {
       window.localStorage.setItem('Família', family[i].value);
     }
   }
 }
 function getRate() {
   for (let i = 0; i < rating.length; i += 1) {
-    if (rating[i].checked === true) {
+    if (rating[i].checkedx) {
       window.localStorage.setItem('Avaliação', rating[i].value);
     }
   }
@@ -49,7 +49,7 @@ function getRate() {
 function getCourses() {
   let itens = '';
   for (let i = 0; i < course.length; i += 1) {
-    if (course[i].checked === true) {
+    if (course[i].checked) {
       itens += `${course[i].value}, `;
       course[i].classList.add('subject');
     }
@@ -58,12 +58,12 @@ function getCourses() {
   window.localStorage.setItem('Matérias', cursos);
 }
 function returnForm() {
-  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n
-  Email: ${localStorage.getItem('Email')}\n
-  Casa: ${localStorage.getItem('Casa')}\n
-  Família: ${localStorage.getItem('Família')}\n
-  Matérias: ${localStorage.getItem('Matérias')}\n
-  Avaliação: ${localStorage.getItem('Avaliação')}\n
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}
+  Email: ${localStorage.getItem('Email')}
+  Casa: ${localStorage.getItem('Casa')}
+  Família: ${localStorage.getItem('Família')}
+  Matérias: ${localStorage.getItem('Matérias')}
+  Avaliação: ${localStorage.getItem('Avaliação')}
   Observações: ${localStorage.getItem('Observações')}`;
 }
 function makeForm() {
