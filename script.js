@@ -11,6 +11,7 @@ const emailInput = document.getElementById('input-email');
 const house = document.getElementById('house');
 const family = document.getElementsByName('family');
 const observations = document.getElementById('textarea');
+const form = document.getElementById('evaluation-form');
 
 const myForm = {};
 function signIn() {
@@ -31,14 +32,14 @@ function ableButton() {
 function getFamily() {
   for (let i = 0; i < family.length; i += 1) {
     if (family[i].checked === true) {
-      myForm['Família'] = rating[i].value;
+      window.localStorage.setItem('Família', rating[i].value);
     }
   }
 }
 function getRate() {
   for (let i = 0; i < rating.length; i += 1) {
     if (rating[i].checked === true) {
-      myForm['Avaliação'] = rating[i].value;
+      window.localStorage.setItem('Avaliação', rating[i].value);
     }
   }
 }
@@ -49,17 +50,23 @@ function getCourses() {
       array.push(course[i].value);
     }
   }
-  myForm['Matérias'] = array;
+  window.localStorage.setItem('Matérias', JSON.stringify(array));
+}
+function makeForm() {
+  // window.localStorage.setItem('Nome', `${firstname.value} ${lastname.value}`);
+  // window.localStorage.setItem('Email', emailInput.value);
+  // window.localStorage.setItem('Casa', house.value);
+  // getFamily();
+  // getCourses();
+  // getRate();
+  // window.localStorage.setItem('Observações', observations.value);
+  // form.innerText = `Nome: ${localStorage.getItem('Nome')}`;
+  returnForm();
 }
 function returnForm() {
-  myForm.Nome = firstname.value + lastname.value;
-  myForm.Email = email.value;
-  myForm.Casa = house.value;
-  getFamily();
-  getCourses();
-  getRate();
-  myForm['Observações'] = observations.value;
+  let materias = localStorage.getItem('Matérias');
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n` + `Email:${localStorage.getItem('Email')}\n` + `Casa:${localStorage.getItem('Casa')}\n` + `Família:${localStorage.getItem('Família')}\n` + `Matérias:${materias}\n` + `Avaliação${localStorage.getItem('Avaliação')}\n` + `Observações:${localStorage.getItem('Observações')}`;
 }
-submitBtn.addEventListener('click', getCourses);
+submitBtn.addEventListener('click', makeForm);
 logIn.addEventListener('click', signIn);
 checkbox.addEventListener('change', ableButton);

@@ -42,9 +42,11 @@ main {
   flex-direction: column;
   width: 50%;
 }
+
 .div-textarea {
-    margin-top: 10px;
+  margin-top: 10px;
 }
+
 h2 {
-    margin-left: 35px;
+  margin-left: 35px;
 }
