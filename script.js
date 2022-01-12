@@ -12,6 +12,7 @@ const house = document.getElementById('house');
 const family = document.getElementsByName('family');
 const observations = document.getElementById('textarea');
 const form = document.getElementById('evaluation-form');
+const counter = document.getElementById('counter');
 
 function signIn() {
   if (email.value === 'tryber@teste.com' && password.value === '123456') {
@@ -27,6 +28,9 @@ function ableButton() {
   } else {
     submitBtn.disabled = true;
   }
+}
+function countCharacters() {
+  counter.innerText = 500 - observations.value.length;
 }
 function getFamily() {
   for (let i = 0; i < family.length; i += 1) {
@@ -73,7 +77,7 @@ function makeForm() {
   form.innerText = `Nome: ${localStorage.getItem('Nome')}`;
   returnForm();
 }
-
+observations.addEventListener('input', countCharacters);
 submitBtn.addEventListener('click', makeForm);
 logIn.addEventListener('click', signIn);
 checkbox.addEventListener('change', ableButton);

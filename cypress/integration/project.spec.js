@@ -335,7 +335,7 @@ describe('Trybewarts', () => {
     });
   });
 
-  describe('20 - Crie um contador com o ID `counter` contendo o número de caracteres disponíveis no textarea, variando de 500 até 0, que deverá ser atualizado a medida que algo for digitado na textarea', () => {
+  describe.only('20 - Crie um contador com o ID `counter` contendo o número de caracteres disponíveis no textarea, variando de 500 até 0, que deverá ser atualizado a medida que algo for digitado na textarea', () => {
     it('Deve existir um contador com o ID "counter"', () => {
       cy.get('#counter').should('exist');
     });
