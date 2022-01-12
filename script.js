@@ -4,7 +4,10 @@ const password = document.getElementById('senha');
 const submitBtn = document.getElementById('submit-btn');
 const checkbox = document.getElementById('agreement');
 const rating = document.getElementsByName('rate');
+const course = document.getElementsByName('course');
 
+const myForm = {
+};
 function signIn() {
   if (email.value === 'tryber@teste.com' && password.value === '123456') {
     alert('Olá, Tryber!');
@@ -23,11 +26,20 @@ function ableButton() {
 function getRateValue (){
   for (let i = 0; i < rating.length; i += 1) {
    if(rating[i].checked === true){
-     console.log(rating[i].value);
+     myForm['Avaliação'] = rating[i].value;
    }
   }
 }
-
-submitBtn.addEventListener('click', sendForm);
+function getCoursesValue (){
+  let array = []
+  for (let i = 0; i < course.length; i+=1) {
+   if(course[i].checked === true){
+array.push(course[i].value);
+   }  
+  }
+  myForm['Matérias'] = array;
+  console.log(myForm);
+}
+submitBtn.addEventListener('click', getCoursesValue);
 logIn.addEventListener('click', signIn);
 checkbox.addEventListener('change', ableButton);
