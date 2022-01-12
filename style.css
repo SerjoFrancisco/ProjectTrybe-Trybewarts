@@ -4,22 +4,27 @@
     justify-content: space-between;
     height: 64px;
 }
+
 .trybewarts-login {
     display: flex;
     align-items: center;
 }
+
 #trybewarts-header-title {
     display: flex;
     align-items: center;
 }
+
 main {
    display: flex; 
 }
+
 #evaluation-form {
     display: flex;
     flex-direction: column;
     width: 675px;
 }
+
 #trybewarts-forms-logo {
     height: 500px;
 }
