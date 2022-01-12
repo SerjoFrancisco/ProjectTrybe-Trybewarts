@@ -32,6 +32,8 @@ main {
 .preferences {
   display: flex;
   width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 2px solid red;
 }
 
@@ -39,4 +41,10 @@ main {
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+.div-textarea {
+    margin-top: 10px;
+}
+h2 {
+    margin-left: 35px;
 }
