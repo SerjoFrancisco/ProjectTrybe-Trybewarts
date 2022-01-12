@@ -5,9 +5,14 @@ const submitBtn = document.getElementById('submit-btn');
 const checkbox = document.getElementById('agreement');
 const rating = document.getElementsByName('rate');
 const course = document.getElementsByName('course');
+const firstname = document.getElementById('input-name');
+const lastname = document.getElementById('input-lastname');
+const emailInput = document.getElementById('input-email');
+const house = document.getElementById('house');
+const family = document.getElementsByName('family');
+const observations = document.getElementById('textarea');
+const form = document.getElementById('evaluation-form');
 
-const myForm = {
-};
 function signIn() {
   if (email.value === 'tryber@teste.com' && password.value === '123456') {
     alert('Olá, Tryber!');
@@ -23,23 +28,51 @@ function ableButton() {
     submitBtn.disabled = true;
   }
 }
-function getRateValue (){
+function getFamily() {
+  for (let i = 0; i < family.length; i += 1) {
+    if (family[i].checked === true) {
+      window.localStorage.setItem('Família', family[i].value);
+    }
+  }
+}
+function getRate() {
   for (let i = 0; i < rating.length; i += 1) {
-   if(rating[i].checked === true){
-     myForm['Avaliação'] = rating[i].value;
-   }
+    if (rating[i].checked === true) {
+      window.localStorage.setItem('Avaliação', rating[i].value);
+    }
   }
 }
-function getCoursesValue (){
-  let array = []
-  for (let i = 0; i < course.length; i+=1) {
-   if(course[i].checked === true){
-array.push(course[i].value);
-   }  
+function getCourses() {
+  let itens = '';
+  for (let i = 0; i < course.length; i += 1) {
+    if (course[i].checked === true) {
+      itens += `${course[i].value}, `;
+    }
   }
-  myForm['Matérias'] = array;
-  console.log(myForm);
+  const cursos = itens.substring(0, itens.length - 2);
+  window.localStorage.setItem('Matérias', cursos);
 }
-submitBtn.addEventListener('click', getCoursesValue);
+function returnForm() {
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}\n
+  Email: ${localStorage.getItem('Email')}\n
+  Casa: ${localStorage.getItem('Casa')}\n
+  Família: ${localStorage.getItem('Família')}\n
+  Matérias: ${localStorage.getItem('Matérias')}\n
+  Avaliação: ${localStorage.getItem('Avaliação')}\n
+  Observações: ${localStorage.getItem('Observações')}`;
+}
+function makeForm() {
+  window.localStorage.setItem('Nome', `${firstname.value} ${lastname.value}`);
+  window.localStorage.setItem('Email', emailInput.value);
+  window.localStorage.setItem('Casa', house.value);
+  getFamily();
+  getCourses();
+  getRate();
+  window.localStorage.setItem('Observações', observations.value);
+  form.innerText = `Nome: ${localStorage.getItem('Nome')}`;
+  returnForm();
+}
+
+submitBtn.addEventListener('click', makeForm);
 logIn.addEventListener('click', signIn);
 checkbox.addEventListener('change', ableButton);
