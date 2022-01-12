@@ -42,17 +42,16 @@ main {
   flex-direction: column;
   width: 50%;
 }
-<<<<<<< HEAD
 
-=======
 #content {
   width: 50%;
   border: 2px solid red;
 }
+
 #sub-content {
   width: 60%;
 }
->>>>>>> 46503b5cc4a7f754771cd7eb3f49a74a23cfdd2d
+
 .div-textarea {
   margin-top: 10px;
 }
