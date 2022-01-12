@@ -28,14 +28,15 @@ main {
 #trybewarts-forms-logo {
   height: 500px;
 }
+
 #dados input {
-  width: 45% ;
+  width: 45%;
   padding: 10px;
   border-radius: 10px;
-  
 }
+
 #house {
-  background-color: #fff;
+  background-color: white;
   padding: 10px;
   width: 43%;
   border-radius: 10px;

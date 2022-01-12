@@ -47,6 +47,7 @@ function getCourses() {
   for (let i = 0; i < course.length; i += 1) {
     if (course[i].checked === true) {
       itens += `${course[i].value}, `;
+      course[i].classList.add('subject');
     }
   }
   const cursos = itens.substring(0, itens.length - 2);
