@@ -138,6 +138,10 @@ main {
   margin-top: 10px;
 }
 
+#textarea {
+  width: 100%;
+}
+
 h2 {
   text-align: center;
 }
