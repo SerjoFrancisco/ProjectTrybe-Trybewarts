@@ -100,15 +100,38 @@ main {
   display: flex;
   flex-direction: column;
   width: 50%;
-}
-
-#content {
-  width: 50%;
   border: 2px solid red;
 }
 
-#sub-content {
-  width: 60%;
+.sub-family {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-family label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#content {
+  border: 2px solid red;
+}
+
+.sub-content {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.div-content {
+  display: flex;
+}
+
+.sub-content label {
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 .div-textarea {
