@@ -7,26 +7,29 @@
 
 .trybewarts-login {
   display: flex;
+  justify-content: end;
   align-items: center;
-}
-.trybewarts-login input{
-  box-sizing: border-box;
-  font-size: medium;
-  width: 150px;
-  padding: 10px;
-  border-radius: 10px;
-  border: none; 
+  flex-wrap: nowrap;
 }
 
+.trybewarts-login input{
+  box-sizing: border-box;
+  width: 30%;
+  margin: 2px;
+  padding: 10px; 
+  border-radius: 10px;
+  border: none;
+} 
+
 .trybewarts-login button {
-  font-size: medium;
+  font-size: 15px;
   color: white;
   background-color: rgb(82, 18, 143);
-  width: 150px;
+  width: 30%;
   padding: 10px;
   border-radius: 10px;
   border: none;
-}
+} 
 
 #trybewarts-header-title {
   display: flex;
@@ -47,19 +50,6 @@ main {
   height: 500px;
 }
 
-/* #dados input {
-  width: 45%;
-  padding: 10px;
-  border-radius: 10px;
-} */
-
-/* #house {
-  background-color: white;
-  padding: 10px;
-  width: 43%;
-  border-radius: 10px; */
-
-/* } */
 #dados {
   display: flex;
   flex-direction: column;
