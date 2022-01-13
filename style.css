@@ -57,8 +57,6 @@ main {
 #dados {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
-
 }
 
 .sub-dados {
@@ -83,6 +81,7 @@ main {
   background-color: white;
   display: flex;
   flex-basis: 100%;
+  border: none;
   margin: 4px;
   padding: 10px;
   border-radius: 10px;
@@ -93,14 +92,12 @@ main {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px solid red;
 }
 
 #family {
   display: flex;
   flex-direction: column;
   width: 50%;
-  border: 2px solid red;
 }
 
 .sub-family {
@@ -111,10 +108,6 @@ main {
 .sub-family label {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-#content {
-  border: 2px solid red;
 }
 
 .sub-content {
