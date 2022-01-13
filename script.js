@@ -41,7 +41,7 @@ function getFamily() {
 }
 function getRate() {
   for (let i = 0; i < rating.length; i += 1) {
-    if (rating[i].checkedx) {
+    if (rating[i].checked) {
       window.localStorage.setItem('Avaliação', rating[i].value);
     }
   }
