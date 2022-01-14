@@ -47,11 +47,12 @@ main {
 #evaluation-form {
   display: flex;
   flex-direction: column;
-  width: 675px;
+  width: 50%;
 }
 
 #trybewarts-forms-logo {
   height: 500px;
+  width: 50%;
 }
 
 #dados {
