@@ -48,7 +48,6 @@ main {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px solid red;
 }
 
 #family {
@@ -59,7 +58,6 @@ main {
 
 #content {
   width: 50%;
-  border: 2px solid red;
 }
 
 #sub-content {
@@ -68,8 +66,14 @@ main {
 
 .div-textarea {
   margin-top: 10px;
+  content: 100%;
 }
 
 h2 {
   text-align: center;
+}
+
+textarea {
+  width: 660px;
+  height: 200px;
 }
